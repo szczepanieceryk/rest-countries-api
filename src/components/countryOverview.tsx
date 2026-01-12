@@ -1,7 +1,21 @@
 import React from 'react';
 import { Theme } from '../types/types';
 
-const CountryOverview: React.FC<{ theme: Theme | string }> = ({ theme }) => {
+interface CountryOverviewProps {
+  theme: Theme | string;
+  countryName: string;
+  population: number;
+  region: string;
+  capital: string;
+}
+
+const CountryOverview: React.FC<CountryOverviewProps> = ({
+  theme,
+  countryName,
+  population,
+  region,
+  capital,
+}) => {
   const darkThemeClasses = 'bg-gray-800 text-white';
   const lightThemeClasses = 'bg-white text-gray-800';
 
@@ -12,16 +26,16 @@ const CountryOverview: React.FC<{ theme: Theme | string }> = ({ theme }) => {
       <img src="" alt="" className="w-full h-[200px] mx-auto rounded-t-md bg-[#ddd]" />
       <div className="py-10 px-8">
         <p className="mb-3 text-lg font-bold">
-          <strong>Country Name</strong>
+          <strong>{countryName}</strong>
         </p>
         <p className="mb-2 ">
-          <span className="font-semibold">Population:</span> 100 million
+          <span className="font-semibold">Population:</span> {population}
         </p>
         <p className="mb-2 ">
-          <span className="font-semibold">Region:</span> South America
+          <span className="font-semibold">Region:</span> {region}
         </p>
         <p className="mb-2 ">
-          <span className="font-semibold">Capital:</span> Brasília
+          <span className="font-semibold">Capital:</span> {capital}
         </p>
       </div>
     </div>
