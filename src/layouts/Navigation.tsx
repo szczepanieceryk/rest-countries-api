@@ -4,7 +4,7 @@ import ThemeSwitcher from '../components/ThemeSwitcher';
 
 const Navigation: React.FC<ThemeProps> = ({ theme, setTheme }) => {
   const lightThemeClasses = 'bg-[#fcfcfcff] text-[#202c37ff]';
-  const darkThemeClasses = 'bg-[#202c37ff] text-[#fcfcfcff]';
+  const darkThemeClasses = 'bg-[#2b3945ff] text-[#fcfcfcff]';
 
   return (
     <nav

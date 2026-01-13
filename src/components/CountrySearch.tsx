@@ -2,9 +2,12 @@ import React from 'react';
 import { Theme } from '../types/types';
 
 const CountrySearch = ({ theme }: { theme: Theme | string }) => {
+  const lightThemeClasses = 'bg-white text-gray-800';
+  const darkThemeClasses = 'bg-[#2b3945ff] text-[#fcfcfcff]';
+
   return (
     <div
-      className={`w-[90%] sm:max-w-[400px] mx-auto my-[2rem] ${theme === 'dark' ? 'bg-gray-800 text-[#fcfcfcff]' : 'bg-white text-gray-800'}`}
+      className={`w-[90%] sm:max-w-[400px] mx-auto my-[2rem] ${theme === 'dark' ? darkThemeClasses : lightThemeClasses}`}
     >
       <div className="relative">
         <svg
