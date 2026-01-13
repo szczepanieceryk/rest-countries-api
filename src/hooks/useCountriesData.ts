@@ -1,7 +1,11 @@
+import { Country } from '../types/types';
+
 const useCountriesData = () => {
-  const fetchCountries = async (): Promise<Response> => {
+  const fetchCountries = async (): Promise<Country[]> => {
     try {
-      const response: Response = await fetch('https://restcountries.com/v3.1/all?fields=name');
+      const response: Response = await fetch(
+        'https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags',
+      );
 
       if (!response.ok) {
         throw new Error('Failed to fetch countries');

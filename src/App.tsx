@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navigation from './layouts/Navigation';
 import useLocalStorage from './hooks/useLocalStorage';
 import CountriesDisplay from './layouts/CountriesDisplay';
 import useCountriesData from './hooks/useCountriesData';
+import { Country } from './types/types';
 
 const App = () => {
   const [theme, setTheme] = useLocalStorage('theme', 'light');
+  const [countries, setCountries] = useState<Country[]>([]);
   const { fetchCountries } = useCountriesData();
 
   useEffect(() => {
@@ -16,6 +18,7 @@ const App = () => {
       // setError(null);
       try {
         const data = await fetchCountries();
+        setCountries(data);
         console.log('Fetched countries:', data);
         // if (mounted) setCountries(data);
       } catch (err) {
@@ -30,14 +33,11 @@ const App = () => {
     return () => {
       // mounted = false;
     };
-    // jeśli eslint narzeka na zależności, możesz dodać fetchCountries do listy zależności
-    // ale wtedy upewnij się, że fetchCountries jest stabilne (useCallback) lub ignoruj regułę
-  }, []); // wywołaj tylko raz przy starcie
-
+  }, []); // call on initial page load
   return (
     <div>
       <Navigation theme={theme} setTheme={setTheme} />
-      <CountriesDisplay theme={theme} />
+      <CountriesDisplay theme={theme} apiData={countries} />
     </div>
   );
 };
