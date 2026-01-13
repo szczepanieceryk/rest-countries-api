@@ -18,8 +18,8 @@ const CountryOverview: React.FC<CountryOverviewProps> = ({
   capital,
   flag,
 }) => {
-  const darkThemeClasses = 'bg-gray-800 text-white';
-  const lightThemeClasses = 'bg-white text-gray-800';
+  const lightThemeClasses = 'bg-[#fcfcfcff] text-[#202c37ff]';
+  const darkThemeClasses = 'bg-[#202c37ff] text-[#fcfcfcff]';
 
   return (
     <div
@@ -30,7 +30,7 @@ const CountryOverview: React.FC<CountryOverviewProps> = ({
         alt={flag.alt}
         className="w-full h-[200px] mx-auto rounded-t-md bg-[#ddd]"
       />
-      <div className="py-10 px-8">
+      <div className={`py-10 px-8 ${theme === 'dark' ? 'bg-[#2b3945ff]' : lightThemeClasses}`}>
         <p className="mb-3 text-lg font-bold">
           <strong>{countryName}</strong>
         </p>
