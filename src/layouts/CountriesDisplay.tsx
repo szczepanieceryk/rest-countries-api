@@ -1,10 +1,23 @@
 import React from 'react';
 import CountrySearch from '../components/CountrySearch';
-import { Theme } from '../types/types';
-const CountriesDisplay = ({ theme }: { theme: Theme | string }) => {
+import { Country, Theme } from '../types/types';
+import CountryOverview from '../components/CountryOverview';
+const CountriesDisplay = ({ theme, apiData }: { theme: Theme | string; apiData: Country[] }) => {
   return (
     <div>
       <CountrySearch theme={theme} />
+      <div className="max-w-7xl mx-auto flex flex-wrap gap-6">
+        {apiData.map((country) => (
+          <CountryOverview
+            key={country.name.common}
+            countryName={country.name.common}
+            population={country.population}
+            region={country.region}
+            capital={country.capital}
+            flag={country.flags}
+          />
+        ))}
+      </div>
     </div>
   );
 };
