@@ -1,5 +1,5 @@
 import React from 'react';
-import CountrySearch from '../components/countrySearch';
+import CountrySearch from '../components/CountrySearch';
 import { Theme } from '../types/types';
 const CountriesDisplay = ({ theme }: { theme: Theme | string }) => {
   return (
