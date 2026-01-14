@@ -3,7 +3,15 @@ import CountrySearch from '../components/CountrySearch';
 import { Country, Theme } from '../types/types';
 import CountryOverview from '../components/CountryOverview';
 import FilterByRegion from '../components/FilterByRegion';
-const CountriesDisplay = ({ theme, apiData }: { theme: Theme | string; apiData: Country[] }) => {
+const CountriesDisplay = ({
+  theme,
+  apiData,
+  onRegionSelect,
+}: {
+  theme: Theme | string;
+  apiData: Country[];
+  onRegionSelect: (region: string) => void;
+}) => {
   const darkThemeClasses = 'bg-[#2b3945ff] text-[#fcfcfcff]';
   const lightThemeClasses = 'bg-[#fcfcfcff] text-[#202c37ff]';
 
@@ -14,7 +22,7 @@ const CountriesDisplay = ({ theme, apiData }: { theme: Theme | string; apiData: 
         <CountrySearch theme={theme} />
 
         {/** Filter Countries by Region */}
-        <FilterByRegion theme={theme} />
+        <FilterByRegion theme={theme} onRegionSelect={onRegionSelect} />
       </div>
 
       {/** Display Countries */}

@@ -17,7 +17,9 @@ const App = () => {
       // setLoading(true);
       // setError(null);
       try {
-        const data = await fetchCountries();
+        const allCountriesURL =
+          'https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags';
+        const data = await fetchCountries(allCountriesURL);
         setCountries(data);
         console.log('Fetched countries:', data);
         // if (mounted) setCountries(data);
@@ -34,10 +36,21 @@ const App = () => {
       // mounted = false;
     };
   }, []); // call on initial page load
+
+  const handleRegionSelect = async (region: string) => {
+    try {
+      const url = `https://restcountries.com/v3.1/region/${encodeURIComponent(region)}`;
+      const data = await fetchCountries(url);
+      setCountries(data);
+    } catch (err) {
+      console.error('Error fetching countries by region:', err);
+    }
+  };
+
   return (
     <div>
       <Navigation theme={theme} setTheme={setTheme} />
-      <CountriesDisplay theme={theme} apiData={countries} />
+      <CountriesDisplay theme={theme} apiData={countries} onRegionSelect={handleRegionSelect} />
     </div>
   );
 };
