@@ -7,7 +7,7 @@ const CountrySearch = ({ theme }: { theme: Theme | string }) => {
 
   return (
     <div
-      className={`w-[90%] sm:max-w-[400px] mx-auto my-[2rem] ${theme === 'dark' ? darkThemeClasses : lightThemeClasses}`}
+      className={`w-[90%] sm:max-w-[400px] mx-auto md:m-0 my-[2rem] ${theme === 'dark' ? darkThemeClasses : lightThemeClasses}`}
     >
       <div className="relative">
         <svg
