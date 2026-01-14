@@ -3,15 +3,14 @@ import CountrySearch from '../components/CountrySearch';
 import { Country, Theme } from '../types/types';
 import CountryOverview from '../components/CountryOverview';
 import FilterByRegion from '../components/FilterByRegion';
-const CountriesDisplay = ({
-  theme,
-  apiData,
-  onRegionSelect,
-}: {
+
+interface CountriesDisplayProps {
   theme: Theme | string;
   apiData: Country[];
   onRegionSelect: (region: string) => void;
-}) => {
+}
+
+const CountriesDisplay: React.FC<CountriesDisplayProps> = ({ theme, apiData, onRegionSelect }) => {
   const darkThemeClasses = 'bg-[#2b3945ff] text-[#fcfcfcff]';
   const lightThemeClasses = 'bg-[#fcfcfcff] text-[#202c37ff]';
 

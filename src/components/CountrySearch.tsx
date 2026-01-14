@@ -1,7 +1,10 @@
 import React from 'react';
 import { Theme } from '../types/types';
 
-const CountrySearch = ({ theme }: { theme: Theme | string }) => {
+interface CountrySearchProps {
+  theme: Theme | string;
+}
+const CountrySearch: React.FC<CountrySearchProps> = ({ theme }) => {
   const lightThemeClasses = 'bg-white text-gray-800';
   const darkThemeClasses = 'bg-[#2b3945ff] text-[#fcfcfcff]';
 

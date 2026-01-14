@@ -6,7 +6,7 @@ interface FilterByRegionProps {
   onRegionSelect: (region: string) => void;
 }
 
-const FilterByRegion = ({ theme, onRegionSelect }: FilterByRegionProps) => {
+const FilterByRegion: React.FC<FilterByRegionProps> = ({ theme, onRegionSelect }) => {
   const [open, setOpen] = useState<boolean>(false);
   const darkThemeClasses = 'bg-gray-700 border border-gray-700 text-white';
   const lightThemeClasses = 'bg-white border border-gray-300 text-gray-700';
