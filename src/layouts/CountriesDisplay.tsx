@@ -11,8 +11,8 @@ interface CountriesDisplayProps {
 }
 
 const CountriesDisplay: React.FC<CountriesDisplayProps> = ({ theme, apiData, onRegionSelect }) => {
-  const darkThemeClasses = 'bg-[#2b3945ff] text-[#fcfcfcff]';
-  const lightThemeClasses = 'bg-[#fcfcfcff] text-[#202c37ff]';
+  const darkThemeClasses = ' text-[#fcfcfcff]';
+  const lightThemeClasses = 'bg-[hsl(0, 0%, 99%)] text-[#202c37ff]';
 
   return (
     <div className={`max-w-7xl mx-auto ${theme == 'dark' ? darkThemeClasses : lightThemeClasses}`}>

@@ -18,7 +18,7 @@ const CountryOverview: React.FC<CountryOverviewProps> = ({
   capital,
   flag,
 }) => {
-  const lightThemeClasses = 'bg-[#fcfcfcff] text-[#202c37ff]';
+  const lightThemeClasses = 'bg-[#ffffff] text-[#202c37ff]';
   const darkThemeClasses = 'bg-[#202c37ff] text-[#fcfcfcff]';
 
   return (

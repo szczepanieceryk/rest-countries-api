@@ -48,7 +48,9 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div
+      className={`min-h-screen ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'}`}
+    >
       <Navigation theme={theme} setTheme={setTheme} />
       <CountriesDisplay theme={theme} apiData={countries} onRegionSelect={handleRegionSelect} />
     </div>
