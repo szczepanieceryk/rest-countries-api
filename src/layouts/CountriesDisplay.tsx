@@ -26,7 +26,7 @@ const CountriesDisplay: React.FC<CountriesDisplayProps> = ({ theme, apiData, onR
 
       {/** Display Countries */}
       <div className="flex flex-wrap gap-6">
-        {apiData.map((country) => (
+        {apiData?.map?.((country) => (
           <CountryOverview
             key={country.name.common}
             theme={theme}
@@ -36,7 +36,7 @@ const CountriesDisplay: React.FC<CountriesDisplayProps> = ({ theme, apiData, onR
             capital={country.capital}
             flag={country.flags}
           />
-        ))}
+        )) || []}
       </div>
     </div>
   );
