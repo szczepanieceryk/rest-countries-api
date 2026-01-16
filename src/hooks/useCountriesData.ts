@@ -46,7 +46,7 @@ const useCountriesData = () => {
     }
   };
 
-  return { handleRegionSelect, initialAllCountriesFetch };
+  return { fetchCountries, handleRegionSelect, initialAllCountriesFetch };
 };
 
 export default useCountriesData;

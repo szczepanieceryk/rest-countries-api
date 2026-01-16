@@ -11,4 +11,6 @@ export type Country = {
   region?: string;
   capital?: string[];
   flags?: { svg?: string; png?: string; alt?: string };
+  borders?: string[];
+  subregion?: string;
 };
