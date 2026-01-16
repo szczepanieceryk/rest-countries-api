@@ -26,9 +26,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./src/assets/screenshots/Zrzut%20ekranu%202026-01-16%20o%2013.04.58.png)
-![](./src/assets/screenshots/Zrzut%20ekranu%202026-01-16%20o%2013.04.58.png)
-![](./src/assets/screenshots/Zrzut%20ekranu%202026-01-16%20o%2013.04.58.png)
+![](./src/assets/screenshots/main-page-desktop-light.png)
+![](./src/assets/screenshots/main-page-desktop-dark.png)
+![](./src/assets/screenshots/main-page-mobile-dark.png)
 
 ### Links
 
