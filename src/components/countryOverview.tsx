@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Theme } from '../types/types';
 
 interface CountryOverviewProps {
@@ -18,12 +19,18 @@ const CountryOverview: React.FC<CountryOverviewProps> = ({
   capital,
   flag,
 }) => {
+  const navigate = useNavigate();
   const lightThemeClasses = 'bg-[#ffffff] text-[#202c37ff]';
   const darkThemeClasses = 'bg-[#202c37ff] text-[#fcfcfcff]';
 
+  const handleClick = () => {
+    navigate(`/country/${countryName.toLowerCase()}`);
+  };
+
   return (
     <div
-      className={`w-[85%] sm:max-w-[300px] mx-auto my-[2rem] rounded-md shadow-md ${theme === 'dark' ? darkThemeClasses : lightThemeClasses}`}
+      className={`w-[85%] sm:max-w-[300px] mx-auto my-[2rem] rounded-md shadow-md ${theme === 'dark' ? darkThemeClasses : lightThemeClasses} cursor-pointer`}
+      onClick={handleClick}
     >
       <img
         src={flag.png}
