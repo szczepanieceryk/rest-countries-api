@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/szczepanieceryk/rest-countries-api/settings/pages",
+  "homepage": "https://github.com/szczepanieceryk/rest-countries-api",
   "name": "rest-api-countries-search",
   "version": "1.0.0",
   "description": "A simple app to search for countries using REST API",
