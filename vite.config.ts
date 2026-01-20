@@ -10,4 +10,8 @@ export default defineConfig({
     port: 3000,
   },
   plugins: [react()],
+  base: '/rest-countries-api/',
+  build: {
+    outDir: 'dist',
+  },
 });
