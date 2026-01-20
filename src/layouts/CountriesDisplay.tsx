@@ -1,7 +1,7 @@
 import React from 'react';
 import CountrySearch from '../components/CountrySearch';
 import { Country, Theme } from '../types/types';
-import CountryOverview from '../components/CountryOverview';
+import CountryOverview from '../components/countryOverview';
 import FilterByRegion from '../components/FilterByRegion';
 
 interface CountriesDisplayProps {
