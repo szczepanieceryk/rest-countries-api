@@ -137,7 +137,7 @@ const CountryDetails: React.FC<CountryDetailsProps> = ({ theme }) => {
                 {country?.borders?.map((border) => (
                   <button
                     key={border}
-                    className="py-3 md:py-1 px-4 bg-gray-700 text-white rounded-md"
+                    className={`py-3 md:py-1 px-4 ${theme === 'dark' ? 'bg-gray-700 text-white' : 'border border-gray-300 shadow-md'} rounded-md`}
                   >
                     {border}
                   </button>
