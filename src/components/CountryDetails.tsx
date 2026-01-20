@@ -69,7 +69,7 @@ const CountryDetails: React.FC<CountryDetailsProps> = ({ theme }) => {
       className={`p-6 md:p-[4rem] max-w-7xl mx-auto ${theme === 'dark' ? darkThemeClasses : lightThemeClasses}`}
     >
       <button
-        className="mt-3 mb-6 md:mb-12 py-2 px-6 bg-gray-700 text-white rounded-md"
+        className={`mt-3 mb-6 md:mb-12 py-2 px-6 ${theme === 'dark' ? 'bg-gray-700 text-white' : 'border border-gray-300 shadow-md'} rounded-md`}
         onClick={() => navigate(-1)}
       >
         <i className="fas fa-arrow-left mr-2"></i>
