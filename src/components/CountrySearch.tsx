@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Theme } from '../types/types';
 
 interface CountrySearchProps {
@@ -7,6 +8,15 @@ interface CountrySearchProps {
 const CountrySearch: React.FC<CountrySearchProps> = ({ theme }) => {
   const lightThemeClasses = 'bg-white text-gray-800';
   const darkThemeClasses = 'bg-[#2b3945ff] text-[#fcfcfcff]';
+  const [countryName, setCountryName] = useState<string>('');
+
+  const navigate = useNavigate();
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && countryName.trim()) {
+      navigate(`/country/${encodeURIComponent(countryName.trim().toLowerCase())}`);
+    }
+  };
 
   return (
     <div
@@ -39,6 +49,9 @@ const CountrySearch: React.FC<CountrySearchProps> = ({ theme }) => {
         </svg>
 
         <input
+          onChange={(e) => setCountryName(e.target.value)}
+          onKeyDown={handleKeyDown}
+          value={countryName}
           type="text"
           placeholder="Search for a country..."
           className={`pl-10 p-4 w-full mx-auto shadow-md border rounded-md ${theme === 'dark' ? 'bg-gray-700 border-gray-700 text-[#fcfcfcff] placeholder-[#fcfcfcff]' : 'bg-white border-gray-300 text-gray-800 placeholder-gray-500'}`}
