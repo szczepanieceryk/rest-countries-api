@@ -35,9 +35,9 @@ const CountryDetails: React.FC<CountryDetailsProps> = ({ theme }) => {
       setError(null);
 
       const controller = new AbortController();
+      const URL = `https://restcountries.com/v3.1/name/${encodeURIComponent(name)}?fullText=true&fields=${FIELDS}`;
       try {
-        const url = `https://restcountries.com/v3.1/name/${encodeURIComponent(name)}?fullText=true&fields=${FIELDS}`;
-        const data = await fetchCountries(url);
+        const data = await fetchCountries(URL);
         setCountry(Array.isArray(data) && data.length > 0 ? data[0] : null);
       } catch (err: any) {
         if (err?.name === 'AbortError') {
