@@ -32,8 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://szczepanieceryk.github.io/rest-countries-api/)
+[Live demo](https://szczepanieceryk.github.io/rest-countries-api/)
 
 ## My process
 
