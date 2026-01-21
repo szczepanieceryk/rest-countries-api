@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Theme } from '../types/types';
+import { useDebounce } from '../hooks/useDebounce';
 
 interface CountrySearchProps {
   theme: Theme | string;
@@ -9,14 +10,15 @@ const CountrySearch: React.FC<CountrySearchProps> = ({ theme }) => {
   const lightThemeClasses = 'bg-white text-gray-800';
   const darkThemeClasses = 'bg-[#2b3945ff] text-[#fcfcfcff]';
   const [countryName, setCountryName] = useState<string>('');
-
   const navigate = useNavigate();
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' && countryName.trim()) {
+  const debounceCountryName = useDebounce(countryName, 1000);
+
+  useEffect(() => {
+    if (debounceCountryName && countryName.trim()) {
       navigate(`/country/${encodeURIComponent(countryName.trim().toLowerCase())}`);
     }
-  };
+  }, [debounceCountryName]);
 
   return (
     <div
@@ -50,7 +52,6 @@ const CountrySearch: React.FC<CountrySearchProps> = ({ theme }) => {
 
         <input
           onChange={(e) => setCountryName(e.target.value)}
-          onKeyDown={handleKeyDown}
           value={countryName}
           type="text"
           placeholder="Search for a country..."
