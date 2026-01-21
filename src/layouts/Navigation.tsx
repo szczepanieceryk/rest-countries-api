@@ -11,7 +11,7 @@ const Navigation: React.FC<ThemeProps> = ({ theme, setTheme }) => {
     <nav
       className={`px-4 py-[2rem] shadow-md ${theme === 'dark' ? darkThemeClasses : lightThemeClasses}`}
     >
-      <div className="max-w-[95%] mx-auto flex flex-wrap justify-between items-center">
+      <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
         <strong onClick={() => navigate('/')} className="text-md lg:text-lg cursor-pointer">
           Where in the world?
         </strong>
