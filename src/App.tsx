@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Navigation from './layouts/Navigation';
 import useLocalStorage from './hooks/useLocalStorage';
@@ -18,7 +18,7 @@ const App = () => {
   }, []); // call on initial page load
 
   return (
-    <BrowserRouter>
+    <Router>
       <div
         className={`min-h-screen ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'}`}
       >
@@ -37,7 +37,7 @@ const App = () => {
           <Route path="/country/:name" element={<CountryDetails theme={theme} />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 };
 
