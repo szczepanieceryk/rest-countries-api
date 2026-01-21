@@ -9,7 +9,7 @@ interface CountryDetailsProps {
 
 const CountryDetails: React.FC<CountryDetailsProps> = ({ theme }) => {
   const lightThemeClasses = 'bg-[#ffffff] text-[#202c37ff]';
-  const darkThemeClasses = 'bg-[#202c37ff] text-[#ffffff]';
+  const darkThemeClasses = 'text-[#ffffff]';
   const navigate = useNavigate();
   const location = useLocation();
   const { name } = useParams<{ name: string }>();
@@ -66,7 +66,7 @@ const CountryDetails: React.FC<CountryDetailsProps> = ({ theme }) => {
 
   return (
     <div
-      className={`p-6 md:p-[4rem] max-w-7xl mx-auto ${theme === 'dark' ? darkThemeClasses : lightThemeClasses}`}
+      className={`mt-2 p-6 md:p-[4rem] max-w-7xl mx-auto ${theme === 'dark' ? darkThemeClasses : lightThemeClasses}`}
     >
       <button
         className={`mt-3 mb-6 md:mb-12 py-2 px-6 ${theme === 'dark' ? 'bg-gray-700 text-white' : 'border border-gray-300 shadow-md'} rounded-md`}
